@@ -102,3 +102,45 @@ Hiperparametros:
 - Taza de aprendizaje
 - Tamaño del lote
 - Nomero de épocas 
+
+
+
+____
+
+# Metricas de evaluación de modelos
+
+ROUGE (Recall Oriented Understudy for Gisting Evaluation):
+Evalua la calidad de resumenes y sistemas de traducción automaticos 
+    - ROUGE-N: Mide la cantidad de de grupos de palabras coincidentes (n-gramas) entre el texto generado y el texto referencia
+    - ROUGE-L: Evalua la subsecuencia comun mas larga (LCS) entre el texto generado y el texto de referencia
+
+BLEU(Bilingual Evaluation Understudy)
+Evalua calidad de taducciones generadas por un modelo; considera la precision(cantidad de palabras correctas en el contexto), emplea n-gramas
+
+BERTScore
+Mide la similitud semantica entre el texto generado y el de referencia, permite medir si el significado del texto generado es similar al del texto de referencia, incluso si las palabras son diferentes
+
+# Conceptos de GenAI
+
+## Tokenización 
+Es una unidad de significado que el modelo utiliza para entender y generar lenguaje.
+la tokenización es el proceso de convertir un texto en una secuencia de tokens
+    - Tokenización basada en palabras: "El", "gato,"esta"
+    - Tokenización basada en subpalabras: "increiblemente" -> "incre","ible","mente"
+Cada Token tiene un valor numerico (un indice) y el modelo aprende patrones basados en la secuencias de estos tokens
+
+## Ventana de contexto
+Capacidad de un modelo para procesar y entender una cierta cantidad de texto (tokens) de entradas 
+Ventana de contexto grande
+    - Permite considerar más información a la vez
+    - Las respuestas más coherentes y mejor conectadas
+    - Requiere más memoria y capacidad de procesamiento
+    -Puede ser un desafío en términos de infraestructura
+
+## Embeddings
+Representaciones vectoriales que convierten datos  como texto, imágenes o audio en valores numericos
+
+Los embeddings de palabras representan relaciones semánticas
+    - Las palabras que tienen significados relacionados
+
+    - Estarán representadas por vectores que son cercanos en el espacio vectorial
